@@ -1,0 +1,27 @@
+### GET /
+GET http://localhost:3000/
+
+### GET /users/:id
+GET http://localhost:3000/users/f4152967-0752-471e-9aa1-7f41e3ce6b5e
+
+### GET /users/:id with invalid id
+GET http://localhost:3000/users/invalid_id
+
+### POST /users
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "id": "f4152967-0752-471e-9aa1-7f41e3ce6b5e",
+  "name": "John Doe",
+  "email": "john@example.com",
+  "age": 30
+}
+
+### POST /users with missing fields
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Jane Doe"
+}
