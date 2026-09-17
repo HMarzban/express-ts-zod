@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
-import { validateBody, validateParams } from "@middleware";
-import { SUserBody, SUserParams, TUserParams, IUserBodyInput } from "@types";
+import { validateBody, validateParams } from "../middleware";
+import { SUserBody, SUserParams, TUserParams, IUserBodyInput } from "../types";
 
 const router = Router();
 

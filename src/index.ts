@@ -1,10 +1,9 @@
-import "tsconfig-paths/register";
 import express from "express";
 import bodyParser from "body-parser";
-import router from "@router";
+import router from "./routers";
 
-const app = express();
-const PORT = 3000;
+export const app = express();
+const PORT = Number(process.env.PORT || 3000);
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -14,6 +13,8 @@ app.use(bodyParser.json());
 
 app.use(router);
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
